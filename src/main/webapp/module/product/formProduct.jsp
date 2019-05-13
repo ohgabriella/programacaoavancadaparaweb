@@ -1,12 +1,14 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+  <%@page contentType="text/html; charset=iso-8859-1" 
+      pageEncoding="iso-8859-1"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta charset="utf-8">
+      <meta charset="iso-8859-1">
       <title>Cadastrando produto</title>
 
       <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +19,7 @@
 
     <div class="container">
          
-        <form:form method="POST" modelAttribute="productForm" class="form-signin">
+        <form:form action="/product" method="POST" modelAttribute="productForm" >
         
             <h2 class="form-signin-heading">Criando um produto</h2>
             
@@ -29,16 +31,16 @@
                 </div>
             </spring:bind>
 
-           <spring:bind path="price">
+           <spring:bind path="description">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input type="text" path="price" class="form-control" placeholder="Preço do produto 0,00"
+                    <form:input type="text" path="description" class="form-control" placeholder="Descrição do produto"
                                 autofocus="true"></form:input>
-                    <form:errors path="price"></form:errors>
+                    <form:errors path="description"></form:errors>
                 </div>
             </spring:bind>
             
 
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
         </form:form>
 
     </div>

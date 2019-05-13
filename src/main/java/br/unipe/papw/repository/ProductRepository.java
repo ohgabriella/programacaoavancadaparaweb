@@ -3,13 +3,13 @@ package br.unipe.papw.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.unipe.papw.model.Produto;
+import br.unipe.papw.model.Product;
 
 @Repository
 public interface ProductRepository
-      extends JpaRepository<Produto, Long>{
+      extends JpaRepository<Product, Long>{
 	
-	Produto findByNome(String nome);
+	Product findByName(String nome);
 	
 }
 

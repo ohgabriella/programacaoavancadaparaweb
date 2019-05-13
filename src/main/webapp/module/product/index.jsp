@@ -16,8 +16,22 @@
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
         </form>
 
-        <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-        <h1> Exibindo produto ${produto.nome} </h1>
+        <h3>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h3>
+    	<p><a href="/product/form">Cadastrar Produto</a></p>
+    	<p><a href="/product">Listar Produtos</a></p>
+    	
+	    <c:if test="${not empty listProduct}">
+	
+			<ul>
+				<c:forEach var="product" items="${listProduct}">
+					<li>${product.name}</li>
+				</c:forEach>
+			</ul>
+	
+		</c:if>
+	
+	
+    	
         
     </c:if>
   </div>

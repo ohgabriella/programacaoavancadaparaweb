@@ -6,14 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Produto {
+public class Product {
 	
 	@Id
 	@GeneratedValue
 	    (strategy=GenerationType.IDENTITY)
 	private int id;
-	private String nome;
-	private String descricao;
+	private String name;
+	private String description;
 	
 	
 	/**
@@ -31,26 +31,26 @@ public class Produto {
 	/**
 	 * @return the nome
 	 */
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 	/**
 	 * @param nome the nome to set
 	 */
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 	/**
 	 * @return the descricao
 	 */
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
 	/**
 	 * @param descricao the descricao to set
 	 */
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String descricao) {
+		this.description = descricao;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
@@ -73,7 +73,7 @@ public class Produto {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
+		Product other = (Product) obj;
 		if (id != other.id)
 			return false;
 		return true;
