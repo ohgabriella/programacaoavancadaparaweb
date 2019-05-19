@@ -46,12 +46,11 @@ public class CategoriaController {
 	@PostMapping("/categoria")
 	public String save(@ModelAttribute("categoriaForm") Categoria categoria, BindingResult bindingResult) {
 		 if (bindingResult.hasErrors()) {
-	            return "module/categoria/productForm";
+	            return "module/categoria/formCategoria";
 	        }
 		 categoriaService.save(categoria);
-
 		 
-		return "module/categoria/index";
+		return "module/product/index";
 	}
 
 }
